@@ -24,6 +24,7 @@ namespace Utils.Runtime
         }
         private int GetFPS()
         {
+            Debug.Log((int)1/Time.deltaTime);
             return Time.captureFramerate;
         }
 
