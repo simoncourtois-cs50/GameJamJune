@@ -21,11 +21,11 @@ MonoBehaviour:
   m_enableFolderColors: 1
   m_folderColors:
   - m_guid: 68a0600fa3139c343882759e66d49800
-    m_color: {r: 0.3, g: 0.55, b: 1, a: 1}
+    m_color: {r: 1, g: 0.29803923, b: 0.5372549, a: 1}
   - m_guid: e6dcabb79e96f8f48a32b23d6604cd12
-    m_color: {r: 0.9056604, g: 0.8318109, b: 0.33748665, a: 1}
+    m_color: {r: 0.28235295, g: 0.9411765, b: 0.30588236, a: 1}
   - m_guid: e4b25b262f8db8b49a0efd854d97f675
-    m_color: {r: 0.2980392, g: 1, b: 0.88223445, a: 1}
+    m_color: {r: 0.3019608, g: 0.54901963, b: 1, a: 1}
   m_enableSeparators: 1
   m_separatorColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_separatorFillColor: {r: 0.22, g: 0.22, b: 0.22, a: 1}
@@ -57,4 +57,4 @@ MonoBehaviour:
     m_spec: '#444 left bold text:white'
   - m_key: grad
     m_spec: '#1f6feb>#7b2ff7 center bold text:white'
-  m_version: 42
+  m_version: 47

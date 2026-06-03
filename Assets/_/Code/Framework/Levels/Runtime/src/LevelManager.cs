@@ -7,16 +7,12 @@ namespace Levels.Runtime
 {
     public class LevelManager : MonoBehaviour
     {
-        #region Publics
-
-
-
-        #endregion
-
-
         #region Unity API
 
-
+        private void Awake()
+        {
+            Load(_titleScreen);
+        }
 
         #endregion
 
@@ -57,27 +53,13 @@ namespace Levels.Runtime
             }
         }
 
-        public LevelData m_debugLevelOne;
-        public LevelData m_debugLevelTwo;
-        public void OnGUI()
-        {
-            if (GUILayout.Button("Load Debug LevelOne"))
-            {
-                Load(m_debugLevelOne);
-            }
-            if (GUILayout.Button("Load Debug LevelTwo"))
-            {
-                Load(m_debugLevelTwo);
-            }
-        }
-
         #endregion
 
 
         #region Private and Protected
 
         private static LevelData _currentLevel;
-
+        [SerializeField] LevelData _titleScreen;
         #endregion
     }
 }
