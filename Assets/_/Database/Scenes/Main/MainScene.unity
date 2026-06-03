@@ -128,7 +128,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 156572111}
-  - component: {fileID: 156572112}
   - component: {fileID: 156572113}
   m_Layer: 0
   m_Name: LevelManager
@@ -152,19 +151,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &156572112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156572110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94453cbc304ae7c408e2b1defe2f7549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Levels.Runtime::Levels.Runtime.LevelManager
-  m_debugLevel: {fileID: 11400000, guid: d22bcb39ad6d50f4786c2d20d1629751, type: 2}
 --- !u!114 &156572113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Levels.Runtime::Levels.Runtime.LevelManager
   m_debugLevelOne: {fileID: 11400000, guid: 5caaf1c8d05551e4ba6a0686d08bafb2, type: 2}
-  m_debugLevelTwo: {fileID: 0}
+  m_debugLevelTwo: {fileID: 11400000, guid: 5caaf1c8d05551e4ba6a0686d08bafb2, type: 2}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
