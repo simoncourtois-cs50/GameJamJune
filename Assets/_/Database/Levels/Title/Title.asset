@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Title
   m_EditorClassIdentifier: Levels.Runtime::Levels.Runtime.LevelData
   m_scenes:
-  - m_sceneAsset: {fileID: 102900000, guid: 54918495308fe6543822df227c3f8eac, type: 3}
+  - m_sceneAsset: {fileID: 102900000, guid: 5283400e55c380348824100736adf27a, type: 3}
+    _scenePath: Assets/_/Database/Levels/LevelOne/Scenes/Gameplay.unity
+    _sceneName: Gameplay

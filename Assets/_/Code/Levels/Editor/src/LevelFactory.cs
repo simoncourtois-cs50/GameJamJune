@@ -319,9 +319,13 @@ namespace Levels.Editor
                 row.style.flexDirection = FlexDirection.Row;
                 row.style.marginBottom = 2;
 
-                var indexLabel = new Label($"{i + 1}.");
+                if (i == 0) row.style.backgroundColor = new Color(0.45f, 0.2f, 0.2f, 0.4f);
+
+                var indexLabel = new Label(i == 0 ? "★" : $"{i + 1}.");
                 indexLabel.style.width = 24;
                 indexLabel.style.unityTextAlign = TextAnchor.MiddleLeft;
+                if (i == 0) indexLabel.style.color = new Color(1f, 0.2f, 0.2f, 1f);
+                if (i == 0) indexLabel.tooltip = "This scene will be set as the active scene (SetActiveScene)";
 
                 var field = new TextField { value = _sceneNames[i] };
                 field.style.flexGrow = 1;
@@ -365,7 +369,12 @@ namespace Levels.Editor
             sb.AppendLine($"{root}{trimmedName}.asset");
             sb.AppendLine($"{root}Scenes/");
             foreach (var s in _sceneNames)
-                sb.AppendLine($"    {trimmedName}_{s}.unity");
+            {
+                bool isFirst = _sceneNames.IndexOf(s) == 0;
+                sb.AppendLine(isFirst
+                    ? $"    {trimmedName}_{s}.unity  ← active"
+                    : $"    {trimmedName}_{s}.unity");
+            }
 
             _previewLabel.text = sb.ToString().TrimEnd();
         }
@@ -407,7 +416,7 @@ namespace Levels.Editor
 
         private string _basePath = "_/Database/Levels";
         private string _levelName = "NewLevel";
-        private List<string> _sceneNames = new List<string> { "Gameplay", "Environments"};
+        private List<string> _sceneNames = new List<string> { "Gameplay", "Environments" };
 
         private ScrollView _sceneListScrollView;
         private TextField _basePathField;

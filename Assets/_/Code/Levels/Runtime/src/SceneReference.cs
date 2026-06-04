@@ -1,5 +1,6 @@
 using System;
 using UnityEditor;
+using UnityEngine;
 
 namespace Levels.Runtime
 {
@@ -33,8 +34,8 @@ namespace Levels.Runtime
 
         #region Private and Protected
 
-        private string _scenePath;
-        private string _sceneName;
+        [SerializeField] private string _scenePath;
+        [SerializeField] private string _sceneName;
 
         #endregion
     }

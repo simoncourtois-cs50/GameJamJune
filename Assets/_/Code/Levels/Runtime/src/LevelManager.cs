@@ -25,6 +25,8 @@ namespace Levels.Runtime
                 var path = scenes[i].ScenePath;
                 AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(path, LoadSceneMode.Additive);
                 while (!asyncOperation.isDone) await Task.Yield();
+
+                if (i == 0) SceneManager.SetActiveScene(SceneManager.GetSceneByPath(path));
             }
         }
 
