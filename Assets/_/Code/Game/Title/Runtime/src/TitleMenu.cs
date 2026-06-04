@@ -26,6 +26,10 @@ namespace Title.Runtime
             Application.Quit();
 #endif
         }
+        public void LoadTitleMenu()
+        {
+            LevelManager.Load(_titleMenu);
+        }
 
 #endregion
 
@@ -34,6 +38,7 @@ namespace Title.Runtime
 
         [SerializeField] private LevelData _level1;
         [SerializeField] private LevelData _credits;
+        [SerializeField] private LevelData _titleMenu;
 
         #endregion
     }
