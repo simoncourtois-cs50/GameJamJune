@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Utils.Runtime
 {
@@ -10,7 +11,11 @@ namespace Utils.Runtime
 
         private void Update()
         {
-            UpdateText();
+#if UNITY_EDITOR
+            CheckInput();
+            EmptyText();
+            if(isTimeToDisplay() && _isVisible) UpdateText();
+#endif
         }
 
         #endregion
@@ -24,13 +29,55 @@ namespace Utils.Runtime
         }
         private int GetFPS()
         {
-            Debug.Log((int)1/Time.deltaTime);
-            return Time.captureFramerate;
+            return (int)(1 / Time.deltaTime);
         }
 
         private void UpdateText()
         {
+            int FPS = GetFPS();
+
+            Color color = Color.white;
+
+            if(FPS <= 30)
+            {
+                color = Color.red;
+            }
+            if(FPS <= 60)
+            {
+                color = Color.yellow;
+            }
+            _text.color = color;
             _text.text = GetFPS().ToString();
+        }
+
+        private bool isTimeToDisplay()
+        {
+            _currentTime += Time.deltaTime;
+            if (_currentTime < 1) return false;
+            _currentTime = 0;
+            return true;
+        }
+
+        private void ToggleFPSCounter()
+        {
+            if (_isVisible)
+            {
+                _isVisible = false;
+                return;
+            }
+            _isVisible = true;
+        }
+        private void EmptyText()
+        {
+            if (!_isVisible) _text.text = "";
+        }
+
+        private void CheckInput()
+        {
+            if (actionReference.action.WasPressedThisFrame())
+            {
+                ToggleFPSCounter();
+            }
         }
 
         #endregion
@@ -39,7 +86,9 @@ namespace Utils.Runtime
         #region Private and Protected
 
         private TMP_Text _text;
-
+        private float _currentTime;
+        private bool _isVisible;
+        [SerializeField] private InputActionReference actionReference;
         #endregion
     }
 }
