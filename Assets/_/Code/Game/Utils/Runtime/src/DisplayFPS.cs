@@ -11,7 +11,7 @@ namespace Utils.Runtime
 
         private void Update()
         {
-#if UNITY_EDITOR
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
             CheckInput();
             EmptyText();
             if(isTimeToDisplay() && _isVisible) UpdateText();
