@@ -7,6 +7,16 @@ namespace Levels.Runtime
 {
     public class LevelManager : MonoBehaviour
     {
+        #region Unity API
+
+        private void Awake()
+        {
+            Load(_titleScreen);
+        }
+
+        #endregion
+
+
         #region Main API
 
         public static async Task Load(LevelData level)
@@ -51,6 +61,7 @@ namespace Levels.Runtime
         #region Private and Protected
 
         private static LevelData _currentLevel;
+        [SerializeField] private LevelData _titleScreen;
 
         #endregion
     }

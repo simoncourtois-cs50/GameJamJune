@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3cbc0523fb8a6a4dbc4a90386063102, type: 3}
-  m_Name: Title
+  m_Name: Credit
   m_EditorClassIdentifier: Levels.Runtime::Levels.Runtime.LevelData
   m_scenes:
-  - m_sceneAsset: {fileID: 102900000, guid: 54918495308fe6543822df227c3f8eac, type: 3}
-    _scenePath: Assets/_/Database/Levels/Title/Scenes/TitleScreen.unity
-    _sceneName: TitleScreen
+  - m_sceneAsset: {fileID: 102900000, guid: f4c7414e895b8ce4eadf9ba4245101ec, type: 3}
+    _scenePath: Assets/_/Database/Levels/Credit/Scenes/Credit_CreditScene.unity
+    _sceneName: Credit_CreditScene

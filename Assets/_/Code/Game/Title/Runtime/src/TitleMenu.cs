@@ -1,4 +1,7 @@
 using Levels.Runtime;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace Title.Runtime
@@ -11,13 +14,26 @@ namespace Title.Runtime
         {
             LevelManager.Load(_level1);
         }
+        public void LoadCredits()
+        {
+            LevelManager.Load(_credits);
+        }
+        public void QuitGame()
+        {
+#if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
 
-        #endregion
+#endregion
 
 
         #region Private and Protected
 
         [SerializeField] private LevelData _level1;
+        [SerializeField] private LevelData _credits;
 
         #endregion
     }

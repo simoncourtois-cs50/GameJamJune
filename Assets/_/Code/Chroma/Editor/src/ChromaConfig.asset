@@ -9,23 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34e3a733eed5fde4ea7b41b420558ffb, type: 3}
+  m_Script: {fileID: 11500000, guid: 27c58030beecea34f823f19edeb5e738, type: 3}
   m_Name: ChromaConfig
   m_EditorClassIdentifier: Chroma.Editor::Chroma.Editor.ChromaConfig
   m_enableHeaders: 1
+  m_bannerFont: {fileID: 0}
+  m_bannerFontName: 
   m_enableTreeLines: 1
   m_treeLineColor: {r: 1, g: 1, b: 1, a: 0.15}
   m_showChildCount: 0
   m_zebra: 0
   m_zebraColor: {r: 1, g: 1, b: 1, a: 0.03}
+  m_warnMissingScripts: 1
   m_enableFolderColors: 1
-  m_folderColors:
-  - m_guid: 68a0600fa3139c343882759e66d49800
-    m_color: {r: 1, g: 0.29803923, b: 0.5372549, a: 1}
-  - m_guid: e6dcabb79e96f8f48a32b23d6604cd12
-    m_color: {r: 0.28235295, g: 0.9411765, b: 0.30588236, a: 1}
-  - m_guid: e4b25b262f8db8b49a0efd854d97f675
-    m_color: {r: 0.3019608, g: 0.54901963, b: 1, a: 1}
+  m_folderColors: []
   m_enableSeparators: 1
   m_separatorColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_separatorFillColor: {r: 0.22, g: 0.22, b: 0.22, a: 1}
@@ -57,4 +54,4 @@ MonoBehaviour:
     m_spec: '#444 left bold text:white'
   - m_key: grad
     m_spec: '#1f6feb>#7b2ff7 center bold text:white'
-  m_version: 47
+  m_version: 0
