@@ -8,7 +8,11 @@ namespace Levels.Runtime
     {
         #region Publics
 
+        [Tooltip("All scenes that compose this level.")]
         public List<SceneReference> m_scenes = new List<SceneReference>();
+
+        [Tooltip("The scene that will be set as the active scene after loading. Must be part of m_scenes.")]
+        public SceneReference m_activeScene;
 
         #endregion
 
@@ -22,6 +26,8 @@ namespace Levels.Runtime
             {
                 m_scenes[i]?.Sync();
             }
+
+            m_activeScene?.Sync();
 #endif
         }
 

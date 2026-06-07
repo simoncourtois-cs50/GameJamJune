@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: LevelOne
   m_EditorClassIdentifier: Levels.Runtime::Levels.Runtime.LevelData
   m_scenes:
-  - m_sceneAsset: {fileID: 102900000, guid: 5283400e55c380348824100736adf27a, type: 3}
-  - m_sceneAsset: {fileID: 102900000, guid: 0eae89e4e613fae458bd7cb9c01acf48, type: 3}
-  - m_sceneAsset: {fileID: 102900000, guid: 26feccbe77a1d564b93a73239f029872, type: 3}
+  - m_sceneAsset: {fileID: 102900000, guid: ff83bf0824b5ec44a869733a30981667, type: 3}
+    _scenePath: Assets/_/Database/Levels/LevelOne/Scenes/LevelOne_Gameplay.unity
+    _sceneName: LevelOne_Gameplay
+  m_activeScene:
+    m_sceneAsset: {fileID: 102900000, guid: ff83bf0824b5ec44a869733a30981667, type: 3}
+    _scenePath: Assets/_/Database/Levels/LevelOne/Scenes/LevelOne_Gameplay.unity
+    _sceneName: LevelOne_Gameplay

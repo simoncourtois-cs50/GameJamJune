@@ -32,7 +32,6 @@ namespace Levels.Editor
                 SavePrefs();
                 RefreshPreview();
             });
-
             root.Add(_basePathField);
             root.Add(MakeSpacer(8));
 
@@ -42,19 +41,19 @@ namespace Levels.Editor
             _levelNameField.RegisterValueChangedCallback(evt =>
             {
                 _levelName = evt.newValue;
-                SavePrefs();
+                TryAutoComplete();
                 RefreshPreview();
             });
             root.Add(_levelNameField);
             root.Add(MakeSpacer(12));
 
             // --- Scene List -----
-            root.Add(MakeLabel("Scenes"));
+            _scenesLabel = MakeLabel("Scenes");
+            root.Add(_scenesLabel);
+
             _sceneListScrollView = new ScrollView();
             _sceneListScrollView.style.maxHeight = 100;
-
             RefreshSceneList();
-
             root.Add(_sceneListScrollView);
             root.Add(MakeSpacer(4));
 
@@ -74,6 +73,8 @@ namespace Levels.Editor
             {
                 if (_sceneNames.Count > 1)
                 {
+                    if (_activeSceneIndex >= _sceneNames.Count - 1)
+                        _activeSceneIndex = _sceneNames.Count - 2;
                     _sceneNames.RemoveAt(_sceneNames.Count - 1);
                     RefreshSceneList();
                     RefreshPreview();
@@ -84,10 +85,8 @@ namespace Levels.Editor
 
             sceneButtons.Add(addBtn);
             sceneButtons.Add(removeBtn);
-
             root.Add(sceneButtons);
             root.Add(MakeSpacer(12));
-
 
             // --- Preview -----
             root.Add(MakeLabel("Preview"));
@@ -106,7 +105,7 @@ namespace Levels.Editor
             root.Add(previewScroll);
 
             // --- Create Button -----
-            var createBtn = new Button(OnCreate) { text = "Create Level" };
+            var createBtn = new Button(OnCreate) { text = "Create / Update" };
             createBtn.style.height = 36;
             createBtn.style.unityFontStyleAndWeight = FontStyle.Bold;
             createBtn.style.marginTop = 8;
@@ -121,11 +120,11 @@ namespace Levels.Editor
 
         #region Public API
 
-        [MenuItem("Tools/Create Level")]
+        [MenuItem("Tools/Level Factory")]
         public static void ShowWindow()
         {
             LevelFactory window = GetWindow<LevelFactory>();
-            window.titleContent = new GUIContent("Create Level");
+            window.titleContent = new GUIContent("Level Factory");
         }
 
         #endregion
@@ -239,13 +238,20 @@ namespace Levels.Editor
             // --- Populate SceneReferences -----
             levelData.m_scenes.Clear();
 
-            foreach (SceneAsset sceneAsset in createdSceneAssets)
+            SceneReference activeSceneRef = null;
+
+            for (int i = 0; i < createdSceneAssets.Count; i++)
             {
                 var sceneRef = new SceneReference();
-                sceneRef.m_sceneAsset = sceneAsset;
+                sceneRef.m_sceneAsset = createdSceneAssets[i];
                 sceneRef.Sync();
                 levelData.m_scenes.Add(sceneRef);
+
+                if (i == _activeSceneIndex)
+                    activeSceneRef = sceneRef;
             }
+
+            levelData.m_activeScene = activeSceneRef ?? levelData.m_scenes[0];
 
             EditorUtility.SetDirty(levelData);
             AssetDatabase.SaveAssets();
@@ -263,6 +269,56 @@ namespace Levels.Editor
                 $"Scenes: {createdSceneAssets.Count} added to Build Settings.",
                 "OK"
             );
+        }
+
+        private void TryAutoComplete()
+        {
+            string trimmedBase = _basePath.Trim('/').Trim('\\');
+            string trimmedName = _levelName.Trim();
+
+            if (string.IsNullOrEmpty(trimmedName)) return;
+
+            string levelFolderPath = $"Assets/{trimmedBase}/{trimmedName}";
+            string scenesFolderPath = $"{levelFolderPath}/Scenes";
+
+            if (!AssetDatabase.IsValidFolder(scenesFolderPath))
+            {
+                UpdateScenesLabel(isExisting: false);
+                return;
+            }
+
+            string levelDataPath = $"{levelFolderPath}/{trimmedName}.asset";
+            LevelData existingLevelData = AssetDatabase.LoadAssetAtPath<LevelData>(levelDataPath);
+
+            string[] guids = AssetDatabase.FindAssets("t:SceneAsset", new[] { scenesFolderPath });
+
+            if (guids.Length == 0) return;
+
+            string prefix = $"{trimmedName}_";
+            List<string> foundSceneNames = new List<string>();
+            string activeScenePath = existingLevelData?.m_activeScene?.ScenePath;
+
+            _activeSceneIndex = 0;
+
+            foreach (string guid in guids)
+            {
+                string path = AssetDatabase.GUIDToAssetPath(guid);
+                string fileName = Path.GetFileNameWithoutExtension(path);
+
+                string shortName = fileName.StartsWith(prefix)
+                    ? fileName.Substring(prefix.Length)
+                    : fileName;
+
+                foundSceneNames.Add(shortName);
+
+                if (!string.IsNullOrEmpty(activeScenePath) && path == activeScenePath)
+                    _activeSceneIndex = foundSceneNames.Count - 1;
+            }
+
+            _sceneNames = foundSceneNames;
+            RefreshSceneList();
+            UpdateScenesLabel(isExisting: true);
+            RefreshPreview();
         }
 
         private void OnFirstLayout(GeometryChangedEvent evt)
@@ -308,6 +364,12 @@ namespace Levels.Editor
             return label;
         }
 
+        private void UpdateScenesLabel(bool isExisting)
+        {
+            if (_scenesLabel == null) return;
+            _scenesLabel.text = isExisting ? "Scenes  (loaded from existing level)" : "Scenes";
+        }
+
         private void RefreshSceneList()
         {
             _sceneListScrollView.Clear();
@@ -319,20 +381,39 @@ namespace Levels.Editor
                 row.style.flexDirection = FlexDirection.Row;
                 row.style.marginBottom = 2;
 
-                if (i == 0) row.style.backgroundColor = new Color(0.45f, 0.2f, 0.2f, 0.4f);
+                if (i == _activeSceneIndex)
+                    row.style.backgroundColor = new Color(0.45f, 0.2f, 0.2f, 0.4f);
 
-                var indexLabel = new Label(i == 0 ? "★" : $"{i + 1}.");
-                indexLabel.style.width = 24;
+                var radio = new Toggle();
+                radio.value = (i == _activeSceneIndex);
+                radio.style.width = 20;
+                radio.style.marginRight = 4;
+                radio.RegisterValueChangedCallback(e =>
+                {
+                    if (e.newValue)
+                    {
+                        _activeSceneIndex = index;
+                        RefreshSceneList();
+                        RefreshPreview();
+                    }
+                    else
+                    {
+                        radio.SetValueWithoutNotify(true);
+                    }
+                });
+
+                var indexLabel = new Label(i == _activeSceneIndex ? "★" : $"{i + 1}.");
+                indexLabel.style.width = 20;
+                indexLabel.style.color = (i == _activeSceneIndex) ? new Color(1f, 0.2f, 0.2f, 1f) : Color.white;
                 indexLabel.style.unityTextAlign = TextAnchor.MiddleLeft;
-                if (i == 0) indexLabel.style.color = new Color(1f, 0.2f, 0.2f, 1f);
-                if (i == 0) indexLabel.tooltip = "This scene will be set as the active scene (SetActiveScene)";
+                if (i == _activeSceneIndex)
+                    indexLabel.tooltip = "This scene will be set as the active scene (SetActiveScene)";
 
                 var field = new TextField { value = _sceneNames[i] };
                 field.style.flexGrow = 1;
                 field.RegisterValueChangedCallback(e =>
                 {
                     _sceneNames[index] = e.newValue;
-                    SavePrefs();
                     RefreshPreview();
                 });
 
@@ -341,8 +422,9 @@ namespace Levels.Editor
                     if (_sceneNames.Count > 1)
                     {
                         _sceneNames.RemoveAt(index);
+                        if (_activeSceneIndex >= _sceneNames.Count)
+                            _activeSceneIndex = _sceneNames.Count - 1;
                         RefreshSceneList();
-                        SavePrefs();
                         RefreshPreview();
                     }
                 })
@@ -350,6 +432,7 @@ namespace Levels.Editor
                 removeBtn.style.width = 24;
                 removeBtn.style.marginLeft = 2;
 
+                row.Add(radio);
                 row.Add(indexLabel);
                 row.Add(field);
                 row.Add(removeBtn);
@@ -368,12 +451,11 @@ namespace Levels.Editor
             var sb = new System.Text.StringBuilder();
             sb.AppendLine($"{root}{trimmedName}.asset");
             sb.AppendLine($"{root}Scenes/");
-            foreach (var s in _sceneNames)
+
+            for (int i = 0; i < _sceneNames.Count; i++)
             {
-                bool isFirst = _sceneNames.IndexOf(s) == 0;
-                sb.AppendLine(isFirst
-                    ? $"    {trimmedName}_{s}.unity  ← active"
-                    : $"    {trimmedName}_{s}.unity");
+                string suffix = (i == _activeSceneIndex) ? "  ← active" : "";
+                sb.AppendLine($"    {trimmedName}_{_sceneNames[i]}.unity{suffix}");
             }
 
             _previewLabel.text = sb.ToString().TrimEnd();
@@ -389,23 +471,16 @@ namespace Levels.Editor
         private void LoadPrefs()
         {
             _basePath = EditorPrefs.GetString(PREF_BASE_PATH, "_/Database/Levels");
-            _levelName = EditorPrefs.GetString(PREF_LEVEL_NAME, "NewLevel");
-
-            string raw = EditorPrefs.GetString(PREF_SCENE_NAMES, "Gameplay");
-            _sceneNames = new List<string>(raw.Split(';'));
         }
 
         private void SavePrefs()
         {
             EditorPrefs.SetString(PREF_BASE_PATH, _basePath);
-            EditorPrefs.SetString(PREF_LEVEL_NAME, _levelName);
-            EditorPrefs.SetString(PREF_SCENE_NAMES, string.Join(";", _sceneNames));
         }
 
         private static bool IsValidFileName(string name)
         {
             if (string.IsNullOrWhiteSpace(name)) return false;
-
             return System.Text.RegularExpressions.Regex.IsMatch(name, @"^[a-zA-Z0-9_\-]+$");
         }
 
@@ -415,17 +490,17 @@ namespace Levels.Editor
         #region Private and Protected
 
         private string _basePath = "_/Database/Levels";
-        private string _levelName = "NewLevel";
-        private List<string> _sceneNames = new List<string> { "Gameplay", "Environments" };
+        private string _levelName = "";
+        private List<string> _sceneNames = new List<string> { "Gameplay" };
+        private int _activeSceneIndex = 0;
 
         private ScrollView _sceneListScrollView;
         private TextField _basePathField;
         private TextField _levelNameField;
         private Label _previewLabel;
+        private Label _scenesLabel;
 
         private const string PREF_BASE_PATH = "LevelFactory_BasePath";
-        private const string PREF_LEVEL_NAME = "LevelFactory_LevelName";
-        private const string PREF_SCENE_NAMES = "LevelFactory_SceneNames";
 
         #endregion
     }

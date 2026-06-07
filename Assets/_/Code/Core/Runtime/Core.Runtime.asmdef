@@ -1,0 +1,16 @@
+{
+    "name": "Core.Runtime",
+    "rootNamespace": "Core.Runtime",
+    "references": [
+        "GUID:d65ae7e4d6d8e4949b37aff3086a1355"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

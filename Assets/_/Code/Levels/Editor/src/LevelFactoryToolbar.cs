@@ -7,7 +7,7 @@ namespace Levels.Editor
         [MainToolbarElement(nameof(LevelFactory), defaultDockPosition = MainToolbarDockPosition.Left)]
         public static MainToolbarButton ShowWindow()
         {
-            MainToolbarContent content = new MainToolbarContent("Create Level", "Create LevelData assets with associated scenes and Build Settings configuration");
+            MainToolbarContent content = new MainToolbarContent("Level Factory", "Create and update levels: folder structure, scenes, LevelData and Build Settings configuration.");
 
             return new MainToolbarButton(content, OpenWindow);
         }

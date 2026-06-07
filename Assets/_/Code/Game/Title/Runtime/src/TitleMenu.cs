@@ -12,10 +12,12 @@ namespace Title.Runtime
 
         public void StartGame()
         {
+            Debug.Log("Start");
             LevelManager.Load(_level1);
         }
         public void LoadCredits()
         {
+            Debug.Log("Credit");
             LevelManager.Load(_credits);
         }
         public void QuitGame()

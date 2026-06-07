@@ -1,14 +1,13 @@
 {
-    "name": "Title.Runtime",
-    "rootNamespace": "Title.Runtime",
+    "name": "ChooseLevel.runtime",
+    "rootNamespace": "ChooseLevel.runtime",
     "references": [
         "GUID:4605b07a17500504cbbccb3cdd748ed8",
-        "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:d65ae7e4d6d8e4949b37aff3086a1355",
-        "GUID:c808709de111e6647a75c416ded4d3a9",
-        "GUID:27eea57a07680174eb62e67ad5029789"
+        "GUID:ce29ed53196f562459e9b52fa4d7bc4e"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
