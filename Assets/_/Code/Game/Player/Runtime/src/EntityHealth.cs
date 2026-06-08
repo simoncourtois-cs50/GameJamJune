@@ -48,6 +48,7 @@ namespace Player.Runtime
         public void TakePill()
         {
             Heal(_pillRecoveryValue);
+            if (_currentMadness < 0) _currentMadness = 0;
         }
         public void TakeMadness(float damagePoints)
         {

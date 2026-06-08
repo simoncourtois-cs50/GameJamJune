@@ -2,6 +2,7 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 using Monster.Runtime;
 using Item.Runtime;
+using Loader.Runtime;
 
 namespace Player.Runtime
 {
@@ -60,6 +61,11 @@ namespace Player.Runtime
                     _pill.PickUp();
                     _playerHealth.TakePill();
                 }
+                else if(hit.gameObject.TryGetComponent(out _navigationArrow))
+                {
+                    Debug.Log("navigation");
+                    _navigationArrow.LoadNextRoom();
+                }
             }
         }
         #endregion
@@ -74,6 +80,7 @@ namespace Player.Runtime
         private EntityHealth _playerHealth;
         private DeathManager _monster;
         private Pill _pill;
+        private SwitchRoom _navigationArrow;
         #endregion
     }
 }
