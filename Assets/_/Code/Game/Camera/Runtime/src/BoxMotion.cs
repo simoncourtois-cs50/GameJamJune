@@ -19,6 +19,8 @@ namespace Camera.Runtime
             if (!gameObject.TryGetComponent(out _boxTransform)) return;
 
             _collider.size = _camBoxSize;
+
+            //RegisterBackgroundBounds();
         }
 
         private void LateUpdate()
@@ -27,6 +29,13 @@ namespace Camera.Runtime
             PushBoxLeft();
             PushBoxUp();
             PushBoxDown();
+            ClampPositions();
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(transform.position, _camBoxSize);
         }
 
         #endregion
@@ -78,6 +87,17 @@ namespace Camera.Runtime
             _boxTransform.position = position;
         }
 
+        private void ClampPositions()
+        {
+           float distanceFromXMaxBound = _collider.bounds.max.x - _xMaxBound;
+           if (distanceFromXMaxBound > 0)
+            {
+                Vector3 position = _boxTransform.position;
+                position.x += distanceFromXMaxBound;
+                _boxTransform.position = position;
+            }
+        }
+
         private void HandleOnGrounded()
         {
             Vector3 _originPosition = _boxTransform.position;
@@ -85,6 +105,13 @@ namespace Camera.Runtime
             targetPosition.y = _playerTransform.position.y;
             Vector3 currentPosition = Vector3.SmoothDamp(_originPosition, targetPosition, ref m_velocity, _smoothSpeed);
             _boxTransform.position = currentPosition;
+        }
+        private void RegisterBackgroundBounds()
+        {
+            _xMaxBound = _backgroundCollider.bounds.max.x;
+            _xMinBound = _backgroundCollider.bounds.min.x;
+            _yMaxBound = _backgroundCollider.bounds.max.y;
+            _yMinBound = _backgroundCollider.bounds.min.y;
         }
 
         #endregion
@@ -97,6 +124,13 @@ namespace Camera.Runtime
         private float _smoothSpeed = 0.4f;
         [SerializeField] private Transform _playerTransform;
         [SerializeField] private Vector3 _camBoxSize;
+        [SerializeField] private Collider2D _backgroundCollider;
+
+        private float _xMaxBound;
+        private float _xMinBound;
+        private float _yMaxBound;
+        private float _yMinBound;
+
         #endregion
     }
 }
