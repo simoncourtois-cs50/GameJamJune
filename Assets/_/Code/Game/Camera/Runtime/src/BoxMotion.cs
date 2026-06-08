@@ -17,6 +17,8 @@ namespace Camera.Runtime
         {
             if (!gameObject.TryGetComponent(out _collider)) return;
             if (!gameObject.TryGetComponent(out _boxTransform)) return;
+
+            _collider.size = _camBoxSize;
         }
 
         private void LateUpdate()
@@ -90,11 +92,11 @@ namespace Camera.Runtime
 
         #region Private and Protected
 
-        private Collider2D _collider;
+        private BoxCollider2D _collider;
         private Transform _boxTransform;
         private float _smoothSpeed = 0.4f;
         [SerializeField] private Transform _playerTransform;
-
+        [SerializeField] private Vector3 _camBoxSize;
         #endregion
     }
 }
