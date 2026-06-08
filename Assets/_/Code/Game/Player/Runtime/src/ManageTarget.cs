@@ -28,7 +28,7 @@ namespace Player.Runtime
 
         
         #region Main API
-
+        /*
         private Vector3 GetMousePosition()
         {
             Vector3 mousePosition = Pointer.current.position.ReadValue();
@@ -38,6 +38,7 @@ namespace Player.Runtime
             mouseWorldPosition.z = 0f;
             return mouseWorldPosition;
         }
+        */
 
         private void FollowMouse()
         {
@@ -50,8 +51,7 @@ namespace Player.Runtime
         {
             if (_clickAction.action.WasPressedThisFrame())
             {
-                Vector3 mousePosition = GetMousePosition();
-                Collider2D hit = Physics2D.OverlapPoint(mousePosition, _clickLayer.value);
+                Collider2D hit = Physics2D.OverlapPoint(transform.position, _clickLayer.value);
                 if (!hit) return;
 
                 if(hit.gameObject.TryGetComponent<DeathManager>(out _monster))
