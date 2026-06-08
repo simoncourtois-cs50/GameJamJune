@@ -110,6 +110,8 @@ MonoBehaviour:
   _clickLayer:
     serializedVersion: 2
     m_Bits: 8
+  _backgroundCollider: {fileID: 0}
+  _mouseSensitivity: 2
 --- !u!114 &5825853576332528878
 MonoBehaviour:
   m_ObjectHideFlags: 0

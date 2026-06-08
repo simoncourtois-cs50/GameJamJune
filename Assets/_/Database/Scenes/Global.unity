@@ -294,6 +294,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6648509159314658099, guid: 061cdcbb5d6830a4aa76122bef6f807d, type: 3}
   m_PrefabInstance: {fileID: 8165314414734303305}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &1952080938 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7282198373876304726, guid: 065bba9be4066cc498b339586926b586, type: 3}
+  m_PrefabInstance: {fileID: 7152531004160154846}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1967009919
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +314,7 @@ GameObject:
   - component: {fileID: 1967009920}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -447,6 +452,7 @@ MonoBehaviour:
   m_veloCity: {x: 0, y: 0, z: 0}
   _cameraBox: {fileID: 1272602161}
   _smoothSpeed: 0.2
+  _backgroundCollider: {fileID: 1952080938}
 --- !u!1 &1975251853
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +687,10 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 1967009922}
+    - target: {fileID: 9093231497502702789, guid: 855738e3cca558845919933027ca0306, type: 3}
+      propertyPath: _backgroundCollider
+      value: 
+      objectReference: {fileID: 1952080938}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

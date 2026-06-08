@@ -12,21 +12,21 @@ namespace Player.Runtime
 
         private void Awake()
         {
-            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            transform.position = Vector3.zero;
             _playerHealth = GetComponent<EntityHealth>();
-
+            RegisterBackgroundBounds();
+            
         }
         private void Update()
         {
             DetectClick();
-        }
-        private void LateUpdate()
-        {
             FollowMouse();
         }
 
         #endregion
 
+        
         #region Main API
 
         private Vector3 GetMousePosition()
@@ -41,7 +41,9 @@ namespace Player.Runtime
 
         private void FollowMouse()
         {
-            transform.position = GetMousePosition();
+            Vector3 delta = Pointer.current.delta.ReadValue();
+            transform.position += _mouseSensitivity * Time.deltaTime * delta;
+            ClampPositions();
         }
 
         private void DetectClick()
@@ -63,11 +65,27 @@ namespace Player.Runtime
                 }
                 else if(hit.gameObject.TryGetComponent(out _navigationArrow))
                 {
-                    Debug.Log("navigation");
                     _navigationArrow.LoadNextRoom();
                 }
             }
         }
+        private void ClampPositions()
+        {
+            float xPos = transform.position.x;
+            float yPos = transform.position.y;
+            float xClamped = Mathf.Clamp(xPos, _xMinBound, _xMaxBound);
+            float yClamped = Mathf.Clamp(yPos, _yMinBound, _yMaxBound);
+            transform.position = new Vector3(xClamped, yClamped, 0);
+        }
+        
+        private void RegisterBackgroundBounds()
+        {
+            _xMaxBound = _backgroundCollider.bounds.max.x;
+            _xMinBound = _backgroundCollider.bounds.min.x;
+            _yMaxBound = _backgroundCollider.bounds.max.y;
+            _yMinBound = _backgroundCollider.bounds.min.y;
+        }
+        
         #endregion
 
 
@@ -76,11 +94,18 @@ namespace Player.Runtime
         [SerializeField] private Camera _camera;
         [SerializeField] private InputActionReference _clickAction;
         [SerializeField] private LayerMask _clickLayer;
-
+        [SerializeField] private Collider2D _backgroundCollider;
+        [SerializeField] private float _mouseSensitivity;
         private EntityHealth _playerHealth;
         private DeathManager _monster;
         private Pill _pill;
         private SwitchRoom _navigationArrow;
+        
+        private float _xMaxBound;
+        private float _xMinBound;
+        private float _yMaxBound;
+        private float _yMinBound;
+
         #endregion
     }
 }
