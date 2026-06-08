@@ -1092,10 +1092,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -448.514
       objectReference: {fileID: 0}
-    - target: {fileID: 1180008657642725117, guid: 3ba35d8756d87be4e984fbd92b9b552e, type: 3}
-      propertyPath: _nextRoom
-      value: 
-      objectReference: {fileID: 11400000, guid: 9af521687bffd1143975196db8866694, type: 2}
     - target: {fileID: 4224610102719952849, guid: 3ba35d8756d87be4e984fbd92b9b552e, type: 3}
       propertyPath: m_Name
       value: navigationbar

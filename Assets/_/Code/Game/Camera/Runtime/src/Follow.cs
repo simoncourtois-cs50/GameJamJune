@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace CameraManager.Runtime
@@ -24,6 +25,14 @@ namespace CameraManager.Runtime
         private void LateUpdate()
         {
             FollowCameraBoxPosition();
+        }
+
+        private void Update()
+        {
+            if (_isShaking)
+            {
+                Shake();
+            }
         }
 
         #endregion
@@ -57,7 +66,14 @@ namespace CameraManager.Runtime
             _yMaxBound = _backgroundCollider.bounds.max.y;
             _yMinBound = _backgroundCollider.bounds.min.y;
         }
-        
+        private void Shake()
+        {
+            _shakeTimer += Time.deltaTime;
+            if (_shakeTimer < _shakeInterval) return;
+            transform.position += Vector3.right * _shakeSwitch;
+            _shakeSwitch = -_shakeSwitch;
+            _shakeTimer = 0;
+        }
         #endregion
 
 
@@ -70,7 +86,12 @@ namespace CameraManager.Runtime
         private Vector3 _offset = new Vector3(0, 0, -10f);
         
         [SerializeField] private Collider2D _backgroundCollider;
+        [SerializeField] private bool _isShaking;
 
+        private float _shakeTimer;
+        private float _shakeInterval = 0.1f;
+        private float _shakeSwitch = 0.05f;
+        
         private float _halfHeight;
         private float _halfwidth;
         

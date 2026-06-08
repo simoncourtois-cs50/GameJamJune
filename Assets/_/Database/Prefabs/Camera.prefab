@@ -51,6 +51,7 @@ MonoBehaviour:
   _cameraBox: {fileID: 0}
   _smoothSpeed: 0.2
   _backgroundCollider: {fileID: 0}
+  _isShaking: 1
 --- !u!20 &1344027518800718714
 Camera:
   m_ObjectHideFlags: 0

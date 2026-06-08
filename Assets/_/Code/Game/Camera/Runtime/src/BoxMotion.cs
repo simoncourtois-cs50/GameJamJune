@@ -27,6 +27,7 @@ namespace CameraManager.Runtime
             PushBoxLeft();
             PushBoxUp();
             PushBoxDown();
+            
         }
 
         private void OnDrawGizmos()
@@ -84,8 +85,6 @@ namespace CameraManager.Runtime
             _boxTransform.position = position;
         }
 
-        
-
         private void HandleOnGrounded()
         {
             Vector3 _originPosition = _boxTransform.position;
@@ -107,9 +106,10 @@ namespace CameraManager.Runtime
         [SerializeField] private Transform _playerTransform;
         [SerializeField] private Vector3 _camBoxSize;
         
-        
-        
-        
+
+
+
+
         #endregion
     }
 }
