@@ -15,6 +15,9 @@ namespace CameraManager.Runtime
 
         private void Awake()
         {
+            _shakeInterval = 0;
+            _shakeAmplitude = 0;
+
             if (!gameObject.TryGetComponent<Transform>(out _cameraTransform)) return;
             RegisterBackgroundBounds();
             Camera camera = Camera.main;
@@ -25,10 +28,8 @@ namespace CameraManager.Runtime
         private void LateUpdate()
         {
             FollowCameraBoxPosition();
-            if (_isShaking)
-            {
-                Shake();
-            }
+            
+            Shake();
         }
 
         private void Update()
@@ -75,6 +76,12 @@ namespace CameraManager.Runtime
             _shakeAmplitude = -_shakeAmplitude;
             _shakeTimer = 0;
         }
+        public void SetShake(float interval, float amplitude)
+        {
+            _shakeAmplitude = amplitude;
+            _shakeInterval = interval;
+        }
+
         #endregion
 
 
@@ -90,8 +97,8 @@ namespace CameraManager.Runtime
         [SerializeField] private bool _isShaking;
 
         private float _shakeTimer;
-        [SerializeField] private float _shakeInterval;
-        [SerializeField] private float _shakeAmplitude;
+        private float _shakeInterval;
+        private float _shakeAmplitude;
         
         private float _halfHeight;
         private float _halfwidth;

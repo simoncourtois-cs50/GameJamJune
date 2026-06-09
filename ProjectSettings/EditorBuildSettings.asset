@@ -29,6 +29,30 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_/Database/Levels/TestSceneSimon/Scenes/TestSceneSimon_Gameplay.unity
     guid: 11a9a764c590d3b44aa87dbe9a33464d
+  - enabled: 1
+    path: Assets/_/Database/Levels/Level4/Scenes/Level4_Gameplay.unity
+    guid: bf325905ee893b840bad395676d0a4fe
+  - enabled: 1
+    path: Assets/_/Database/Levels/Salon/Scenes/Salon_Gameplay.unity
+    guid: df4248af31d8e3745a45812ab44ea113
+  - enabled: 1
+    path: Assets/_/Database/Levels/Cuisine/Scenes/Cuisine_Gameplay.unity
+    guid: 922df195b8febd44b82ddf9ca2c4c701
+  - enabled: 1
+    path: Assets/_/Database/Levels/Salle_de_bain/Scenes/Salle_de_bain_Gameplay.unity
+    guid: 869110c5ca0c9594c99b3724530aa691
+  - enabled: 1
+    path: Assets/_/Database/Levels/Chambre/Scenes/Chambre_Gameplay.unity
+    guid: db494470f191a8d4d99abbbe1c0bf7b5
+  - enabled: 1
+    path: Assets/_/Database/Levels/Couloir/Scenes/Couloir_Gameplay.unity
+    guid: e59bd32fe42609f4e8489de2c92d301d
+  - enabled: 1
+    path: Assets/_/Database/Levels/Grenier/Scenes/Grenier_Gameplay.unity
+    guid: 62e16ab1ea219b044a39485226c128d7
+  - enabled: 1
+    path: Assets/_/Database/Levels/Cave/Scenes/Cave_Gameplay.unity
+    guid: 3719e88300ac8e44fa6229e8bdde2475
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

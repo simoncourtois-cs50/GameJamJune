@@ -3,6 +3,7 @@ using UnityEngine;
 using Monster.Runtime;
 using Item.Runtime;
 using Loader.Runtime;
+using System;
 
 namespace Player.Runtime
 {
@@ -11,6 +12,8 @@ namespace Player.Runtime
         #region
 
         public bool _isDrunk;
+        public event Action OnMonsterKill;
+        public event Action OnPillPicked;
 
         #endregion
 
@@ -19,6 +22,7 @@ namespace Player.Runtime
 
         private void Awake()
         {
+            _drunkIntensity = 0;
             Cursor.lockState = CursorLockMode.Locked;
             transform.position = Vector3.zero;
             _playerHealth = GetComponent<EntityHealth>();
@@ -29,11 +33,8 @@ namespace Player.Runtime
         {
             DetectClick();
             FollowMouse();
-
-            if (_isDrunk)
-            {
-                DrunkAim();
-            }
+            
+            DrunkAim();
         }
 
         #endregion
@@ -57,10 +58,12 @@ namespace Player.Runtime
 
                 if(hit.gameObject.TryGetComponent<DeathManager>(out _monster))
                 {
+                    OnMonsterKill?.Invoke();
                     _monster.Kill();
                 }
                 else if(hit.gameObject.TryGetComponent<Pill>(out _pill))
                 {
+                    OnPillPicked?.Invoke();
                     _pill.PickUp();
                     _playerHealth.TakePill();
                 }
@@ -99,6 +102,11 @@ namespace Player.Runtime
             transform.position += drunkOffset;
         }
         
+        public void SetDrunkness(float drunkness)
+        {
+            _drunkIntensity = drunkness;
+        }
+
         #endregion
 
 
@@ -109,7 +117,7 @@ namespace Player.Runtime
         [SerializeField] private LayerMask _clickLayer;
         [SerializeField] private Collider2D _backgroundCollider;
         [SerializeField] private float _mouseSensitivity;
-        [SerializeField] private float _drunkIntensity;
+        private float _drunkIntensity;
 
         private EntityHealth _playerHealth;
         private DeathManager _monster;
