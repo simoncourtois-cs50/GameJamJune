@@ -972,6 +972,14 @@ MonoBehaviour:
   _level1: {fileID: 11400000, guid: 3d39a46a38693f846b38e243d35c4613, type: 2}
   _credits: {fileID: 11400000, guid: 7dcc079002723cc4f800190773630ed3, type: 2}
   _titleMenu: {fileID: 11400000, guid: bfa802ba3f38256418e646b5aeba3a8d, type: 2}
+  _gameManagerRef:
+    serializedGuid: c31f015feef6624ebfedddad9b3e1c86
+    cachedName: GameManager
+    cachedScene: {fileID: 102900000, guid: 938ea20e8575a454b855530d9be0b5c5, type: 3}
+  _madnessManagerReference:
+    serializedGuid: 62278f9b408fef4eb710ef61479e9f46
+    cachedName: MadnessManager
+    cachedScene: {fileID: 102900000, guid: 938ea20e8575a454b855530d9be0b5c5, type: 3}
 --- !u!4 &1559443938
 Transform:
   m_ObjectHideFlags: 0

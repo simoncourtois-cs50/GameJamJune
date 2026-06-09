@@ -1,4 +1,4 @@
-using System.Reflection;
+
 using Player.Runtime;
 using UnityEngine;
 
@@ -34,7 +34,15 @@ namespace GameConductor.Runtime
             _victoryScreen.SetActive(true);
             Cursor.lockState = CursorLockMode.Confined;
         }
-        
+
+        public void Reset()
+        {
+            _health.Reset();
+            _victoryScreen.SetActive(false);
+            _gameoverScreen.SetActive(false);
+            _currentMonsterNumber = _monsterNumber;
+        }
+
         #endregion
 
 
@@ -44,7 +52,7 @@ namespace GameConductor.Runtime
         [SerializeField] private GameObject _gameoverScreen;
         [SerializeField] private GameObject _victoryScreen;
         [SerializeField] private ManageTarget _player;
-
+        [SerializeField] private EntityHealth _health;    
         [Header("Game Variables")]
         [SerializeField] private int _monsterNumber;
 

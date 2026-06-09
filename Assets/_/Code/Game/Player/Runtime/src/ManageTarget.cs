@@ -23,7 +23,6 @@ namespace Player.Runtime
         private void Awake()
         {
             _drunkIntensity = 0;
-            Cursor.lockState = CursorLockMode.Locked;
             transform.position = Vector3.zero;
             _playerHealth = GetComponent<EntityHealth>();
             RegisterBackgroundBounds();

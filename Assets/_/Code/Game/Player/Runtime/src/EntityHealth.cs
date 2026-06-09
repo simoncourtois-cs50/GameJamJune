@@ -85,6 +85,11 @@ namespace Player.Runtime
             _currentTime = 0;
         }
 
+        public void Reset()
+        {
+            _currentMadness = 0;
+        }
+
         #endregion
 
 

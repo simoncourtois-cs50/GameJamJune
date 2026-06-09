@@ -1,4 +1,6 @@
+using GameConductor.Runtime;
 using Levels.Runtime;
+using Madness.Runtime;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -8,16 +10,28 @@ namespace Title.Runtime
 {
     public class TitleMenu : MonoBehaviour
     {
+        #region Unity API
+
+        private void Awake()
+        {
+            _gameManager = _gameManagerRef.gameObject.GetComponent<GameManager>();
+            _madnessManager = _madnessManagerReference.gameObject.GetComponent<MadnessManager>();
+        }
+
+        #endregion
+        
+        
         #region Main API
 
         public void StartGame()
         {
-            Debug.Log("Start");
+            Cursor.lockState = CursorLockMode.Locked;
+            _gameManager.Reset();
+            _madnessManager.Reset();
             LevelManager.Load(_level1);
         }
         public void LoadCredits()
         {
-            Debug.Log("Credit");
             LevelManager.Load(_credits);
         }
         public void QuitGame()
@@ -41,7 +55,10 @@ namespace Title.Runtime
         [SerializeField] private LevelData _level1;
         [SerializeField] private LevelData _credits;
         [SerializeField] private LevelData _titleMenu;
-
+        [SerializeField] private GuidReference _gameManagerRef;
+        [SerializeField] private GuidReference _madnessManagerReference;
+        private GameManager _gameManager;
+        private MadnessManager _madnessManager;
         #endregion
     }
 }

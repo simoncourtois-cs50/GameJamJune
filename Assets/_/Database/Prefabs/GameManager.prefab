@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3428089450984759846}
   - component: {fileID: 483790141038783198}
+  - component: {fileID: 8698336511711521232}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -47,4 +48,18 @@ MonoBehaviour:
   _gameoverScreen: {fileID: 0}
   _victoryScreen: {fileID: 0}
   _player: {fileID: 0}
-  _monsterNumber: 1
+  _health: {fileID: 0}
+  _monsterNumber: 5
+--- !u!114 &8698336511711521232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3718495543324164874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98bbc2c1e63e98543830eec78d976795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GUIDReference.Runtime::GuidComponent
+  serializedGuid: 

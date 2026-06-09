@@ -47,4 +47,9 @@ MonoBehaviour:
   _roomDataList:
   - {fileID: 11400000, guid: eb94f70ea60bd09439403726313cd6f2, type: 2}
   - {fileID: 11400000, guid: e8d06ba86d16ba14980ac164eedfa9df, type: 2}
+  - {fileID: 11400000, guid: 5e54e4a2932da0b4ca2c5c4f26e7e829, type: 2}
+  - {fileID: 11400000, guid: 783223b9e48047f499d6c21ade4cdbcb, type: 2}
+  - {fileID: 11400000, guid: 4f07f50505da70449921eb67f9e637a5, type: 2}
+  - {fileID: 11400000, guid: fc63c64c532e5974584905f0d31ba87f, type: 2}
+  - {fileID: 11400000, guid: edceff7b187a4e14cabdd9e78908a8f4, type: 2}
   _player: {fileID: 0}
