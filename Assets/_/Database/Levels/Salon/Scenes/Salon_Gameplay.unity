@@ -1918,12 +1918,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 615728122786250747, guid: 08440da1511da7340a06444ca796809f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.160556
+      objectReference: {fileID: 0}
+    - target: {fileID: 615728122786250747, guid: 08440da1511da7340a06444ca796809f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.160556
+      objectReference: {fileID: 0}
+    - target: {fileID: 615728122786250747, guid: 08440da1511da7340a06444ca796809f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.160556
+      objectReference: {fileID: 0}
+    - target: {fileID: 615728122786250747, guid: 08440da1511da7340a06444ca796809f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.9
+      value: 1.5300001
       objectReference: {fileID: 0}
     - target: {fileID: 615728122786250747, guid: 08440da1511da7340a06444ca796809f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.1
+      value: -0.54050004
       objectReference: {fileID: 0}
     - target: {fileID: 615728122786250747, guid: 08440da1511da7340a06444ca796809f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1957,9 +1969,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 615728122786250747, guid: 08440da1511da7340a06444ca796809f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4689634917631948963, guid: 08440da1511da7340a06444ca796809f, type: 3}
       propertyPath: m_Name
       value: P_salon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825670916853821375, guid: 08440da1511da7340a06444ca796809f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825670916853821375, guid: 08440da1511da7340a06444ca796809f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825670916853821375, guid: 08440da1511da7340a06444ca796809f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

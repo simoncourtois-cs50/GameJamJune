@@ -1612,6 +1612,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046888674}
   m_CullTransparentMesh: 1
+--- !u!61 &1235433552 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5014983516094161220, guid: 065bba9be4066cc498b339586926b586, type: 3}
+  m_PrefabInstance: {fileID: 7152531004160154846}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1272602161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6648509159314658099, guid: 061cdcbb5d6830a4aa76122bef6f807d, type: 3}
@@ -2005,11 +2010,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894743426}
   m_CullTransparentMesh: 1
---- !u!61 &1952080938 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 7282198373876304726, guid: 065bba9be4066cc498b339586926b586, type: 3}
-  m_PrefabInstance: {fileID: 7152531004160154846}
-  m_PrefabAsset: {fileID: 0}
 --- !u!20 &1967009922 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1344027518800718714, guid: c6ebd5ecd4714d24dafc6b9168e4b698, type: 3}
@@ -2422,7 +2422,7 @@ PrefabInstance:
     - target: {fileID: 9093231497502702789, guid: 855738e3cca558845919933027ca0306, type: 3}
       propertyPath: _backgroundCollider
       value: 
-      objectReference: {fileID: 1952080938}
+      objectReference: {fileID: 1235433552}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2620,7 +2620,7 @@ PrefabInstance:
     - target: {fileID: 740175313965422583, guid: c6ebd5ecd4714d24dafc6b9168e4b698, type: 3}
       propertyPath: _backgroundCollider
       value: 
-      objectReference: {fileID: 1952080938}
+      objectReference: {fileID: 1235433552}
     - target: {fileID: 7809886806907797729, guid: c6ebd5ecd4714d24dafc6b9168e4b698, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 0
