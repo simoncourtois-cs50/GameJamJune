@@ -1,1 +1,16 @@
-{"name":"Camera.Runtime","rootNamespace":"Camera.Runtime","references":[],"includePlatforms":[],"excludePlatforms":[],"allowUnsafeCode":false,"overrideReferences":false,"precompiledReferences":[],"autoReferenced":true,"defineConstraints":[],"versionDefines":[],"noEngineReferences":false}
+{
+    "name": "namespace CameraManager.Runtime",
+    "rootNamespace": "namespace CameraManager.Runtime",
+    "references": [
+        "GUID:d65ae7e4d6d8e4949b37aff3086a1355"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

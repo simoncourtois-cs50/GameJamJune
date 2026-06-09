@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Camera.Runtime
+namespace CameraManager.Runtime
 {
     public class BoxMotion : MonoBehaviour
     {
@@ -27,6 +27,13 @@ namespace Camera.Runtime
             PushBoxLeft();
             PushBoxUp();
             PushBoxDown();
+            
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(transform.position, _camBoxSize);
         }
 
         #endregion
@@ -86,6 +93,7 @@ namespace Camera.Runtime
             Vector3 currentPosition = Vector3.SmoothDamp(_originPosition, targetPosition, ref m_velocity, _smoothSpeed);
             _boxTransform.position = currentPosition;
         }
+        
 
         #endregion
 
@@ -97,6 +105,11 @@ namespace Camera.Runtime
         private float _smoothSpeed = 0.4f;
         [SerializeField] private Transform _playerTransform;
         [SerializeField] private Vector3 _camBoxSize;
+        
+
+
+
+
         #endregion
     }
 }

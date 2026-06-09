@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_/Database/Levels/Level2/Scenes/Level2_Gameplay.unity
     guid: 7aeca2631bccea24d959bdb0bddc082e
+  - enabled: 1
+    path: Assets/_/Database/Levels/Level3/Scenes/Level3_Gameplay.unity
+    guid: 5bd834995ed3899449f645a08ed009c7
+  - enabled: 1
+    path: Assets/_/Database/Levels/TestSceneSimon/Scenes/TestSceneSimon_Gameplay.unity
+    guid: 11a9a764c590d3b44aa87dbe9a33464d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
