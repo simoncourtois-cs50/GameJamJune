@@ -845,6 +845,14 @@ PrefabInstance:
       propertyPath: _backgroundCollider
       value: 
       objectReference: {fileID: 1952080938}
+    - target: {fileID: 1344027518800718714, guid: c6ebd5ecd4714d24dafc6b9168e4b698, type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344027518800718714, guid: c6ebd5ecd4714d24dafc6b9168e4b698, type: 3}
+      propertyPath: orthographic size
+      value: 5.033783
+      objectReference: {fileID: 0}
     - target: {fileID: 7809886806907797729, guid: c6ebd5ecd4714d24dafc6b9168e4b698, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 0
@@ -1035,6 +1043,18 @@ PrefabInstance:
     - target: {fileID: 6648509159314658099, guid: 061cdcbb5d6830a4aa76122bef6f807d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246447714429497959, guid: 061cdcbb5d6830a4aa76122bef6f807d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.05420078
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246447714429497959, guid: 061cdcbb5d6830a4aa76122bef6f807d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.084811606
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246447714429497959, guid: 061cdcbb5d6830a4aa76122bef6f807d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
