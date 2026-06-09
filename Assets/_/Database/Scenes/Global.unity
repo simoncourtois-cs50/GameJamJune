@@ -600,6 +600,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1272602161}
     - target: {fileID: 740175313965422583, guid: c6ebd5ecd4714d24dafc6b9168e4b698, type: 3}
+      propertyPath: _isShaking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 740175313965422583, guid: c6ebd5ecd4714d24dafc6b9168e4b698, type: 3}
       propertyPath: _backgroundCollider
       value: 
       objectReference: {fileID: 1952080938}
