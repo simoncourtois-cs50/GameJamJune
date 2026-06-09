@@ -1,0 +1,16 @@
+{
+    "name": "Room.Runtime",
+    "rootNamespace": "Room.Runtime",
+    "references": [
+        "GUID:c959baa87c12e654db2b72f7955f355c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

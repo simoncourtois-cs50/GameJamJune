@@ -9,11 +9,10 @@ public class Flicker : MonoBehaviour
     {
         DefectEffect();
 
-        if (_isFlickering)
+        if (_isFlickering && _flickerInterval > 0)
         {
             FlickerIntensity();
         }
-       
     }
 
     #endregion
