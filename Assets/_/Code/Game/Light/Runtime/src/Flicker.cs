@@ -13,7 +13,6 @@ public class Flicker : MonoBehaviour
         {
             FlickerIntensity();
         }
-       
     }
 
     #endregion
