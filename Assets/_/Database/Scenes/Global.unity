@@ -2682,6 +2682,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6375200303476954284, guid: 065bba9be4066cc498b339586926b586, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375200303476954284, guid: 065bba9be4066cc498b339586926b586, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6789470906694082575, guid: 065bba9be4066cc498b339586926b586, type: 3}
       propertyPath: m_Name
       value: LevelManager
