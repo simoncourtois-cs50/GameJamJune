@@ -88,6 +88,7 @@ namespace Player.Runtime
         public void Reset()
         {
             _currentMadness = 0;
+            _isDead = false;
         }
 
         #endregion
