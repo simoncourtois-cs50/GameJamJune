@@ -194,6 +194,150 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169523082}
   m_CullTransparentMesh: 1
+--- !u!1 &475019287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6184052098123409518, guid: 855738e3cca558845919933027ca0306, type: 3}
+  m_PrefabInstance: {fileID: 3193911688565092522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &475019288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475019287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a545ad04ac86d6e4fa63a87cd7f2d910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Flicker
+  _torch: {fileID: 475019289}
+  _flickerCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.104235426
+      value: 1.0023284
+      inSlope: 0.42513746
+      outSlope: 0.42513746
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.17613567
+      value: 0.442038
+      inSlope: -6.0093503
+      outSlope: -6.0093503
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.17812437
+      value: 1.0049716
+      inSlope: 0.14506634
+      outSlope: 0.14506634
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.30348107
+      value: 0.43397874
+      inSlope: -0.0976751
+      outSlope: -0.0976751
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.40387833
+      value: 0.9013334
+      inSlope: 0.07962796
+      outSlope: 0.07962796
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.41239882
+      value: 0.93222743
+      inSlope: -0.0179891
+      outSlope: -0.0179891
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4890266
+      value: 1.0009892
+      inSlope: 0.021415113
+      outSlope: 0.021415113
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.71677643
+      value: 0.18576205
+      inSlope: -0.049707748
+      outSlope: -0.049707748
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.7436124
+      value: 0.93511295
+      inSlope: 1.0330862
+      outSlope: 1.0330862
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.9247729
+      value: 0.6778636
+      inSlope: 0.15519749
+      outSlope: 0.15519749
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _flickerInterval: 4
+--- !u!114 &475019289 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1044888531513413107, guid: 855738e3cca558845919933027ca0306, type: 3}
+  m_PrefabInstance: {fileID: 3193911688565092522}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475019287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.Light2D
 --- !u!1 &546035058
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +433,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5113decb4625eb4198dd46c859955e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Player.Runtime::Player.Runtime.EntityHealth
+--- !u!1 &933417023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 933417024}
+  m_Layer: 0
+  m_Name: MadnessManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &933417024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933417023}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.71915, y: 2.17858, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1272602161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6648509159314658099, guid: 061cdcbb5d6830a4aa76122bef6f807d, type: 3}
@@ -545,7 +720,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6184052098123409518, guid: 855738e3cca558845919933027ca0306, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 475019288}
   m_SourcePrefab: {fileID: 100100000, guid: 855738e3cca558845919933027ca0306, type: 3}
 --- !u!1001 &6274112151052754520
 PrefabInstance:
@@ -810,3 +988,4 @@ SceneRoots:
   - {fileID: 3193911688565092522}
   - {fileID: 8165314414734303305}
   - {fileID: 7173697006832341175}
+  - {fileID: 933417024}
