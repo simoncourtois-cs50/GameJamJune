@@ -8,6 +8,13 @@ namespace Player.Runtime
 {
     public class ManageTarget : MonoBehaviour
     {
+        #region
+
+        public bool _isDrunk;
+
+        #endregion
+
+
         #region Unity API
 
         private void Awake()
@@ -22,23 +29,17 @@ namespace Player.Runtime
         {
             DetectClick();
             FollowMouse();
+
+            if (_isDrunk)
+            {
+                DrunkAim();
+            }
         }
 
         #endregion
 
         
         #region Main API
-        /*
-        private Vector3 GetMousePosition()
-        {
-            Vector3 mousePosition = Pointer.current.position.ReadValue();
-            mousePosition.z = Mathf.Abs(_camera.transform.position.z);
-
-            Vector3 mouseWorldPosition = _camera.ScreenToWorldPoint(mousePosition);
-            mouseWorldPosition.z = 0f;
-            return mouseWorldPosition;
-        }
-        */
 
         private void FollowMouse()
         {
@@ -85,6 +86,18 @@ namespace Player.Runtime
             _yMaxBound = _backgroundCollider.bounds.max.y;
             _yMinBound = _backgroundCollider.bounds.min.y;
         }
+
+        private void DrunkAim()
+        {
+            _perlinTimer += Time.deltaTime;
+
+            float drunkX = (Mathf.PerlinNoise(_perlinTimer, 0f) - 0.5f) * _drunkIntensity;
+            float drunkY = (Mathf.PerlinNoise( 0f, _perlinTimer) - 0.5f) * _drunkIntensity;
+
+            Vector3 drunkOffset = new Vector3(drunkX, drunkY, 0f);
+
+            transform.position += drunkOffset;
+        }
         
         #endregion
 
@@ -96,6 +109,8 @@ namespace Player.Runtime
         [SerializeField] private LayerMask _clickLayer;
         [SerializeField] private Collider2D _backgroundCollider;
         [SerializeField] private float _mouseSensitivity;
+        [SerializeField] private float _drunkIntensity;
+
         private EntityHealth _playerHealth;
         private DeathManager _monster;
         private Pill _pill;
@@ -105,6 +120,8 @@ namespace Player.Runtime
         private float _xMinBound;
         private float _yMaxBound;
         private float _yMinBound;
+
+        private float _perlinTimer;
 
         #endregion
     }
