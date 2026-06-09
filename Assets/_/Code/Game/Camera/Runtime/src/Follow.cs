@@ -25,14 +25,15 @@ namespace CameraManager.Runtime
         private void LateUpdate()
         {
             FollowCameraBoxPosition();
-        }
-
-        private void Update()
-        {
             if (_isShaking)
             {
                 Shake();
             }
+        }
+
+        private void Update()
+        {
+            
         }
 
         #endregion
@@ -70,8 +71,8 @@ namespace CameraManager.Runtime
         {
             _shakeTimer += Time.deltaTime;
             if (_shakeTimer < _shakeInterval) return;
-            transform.position += Vector3.right * _shakeSwitch;
-            _shakeSwitch = -_shakeSwitch;
+            transform.position += Vector3.right * _shakeAmplitude;
+            _shakeAmplitude = -_shakeAmplitude;
             _shakeTimer = 0;
         }
         #endregion
@@ -89,8 +90,8 @@ namespace CameraManager.Runtime
         [SerializeField] private bool _isShaking;
 
         private float _shakeTimer;
-        private float _shakeInterval = 0.1f;
-        private float _shakeSwitch = 0.05f;
+        [SerializeField] private float _shakeInterval;
+        [SerializeField] private float _shakeAmplitude;
         
         private float _halfHeight;
         private float _halfwidth;

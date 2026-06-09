@@ -607,6 +607,10 @@ PrefabInstance:
       propertyPath: _backgroundCollider
       value: 
       objectReference: {fileID: 1952080938}
+    - target: {fileID: 7809886806907797729, guid: c6ebd5ecd4714d24dafc6b9168e4b698, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7891513468633745657, guid: c6ebd5ecd4714d24dafc6b9168e4b698, type: 3}
       propertyPath: m_Name
       value: Camera
