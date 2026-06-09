@@ -79,7 +79,7 @@ namespace Player.Runtime
             float yPos = transform.position.y;
             float xClamped = Mathf.Clamp(xPos, _xMinBound, _xMaxBound);
             float yClamped = Mathf.Clamp(yPos, _yMinBound, _yMaxBound);
-            transform.position = new Vector3(xClamped, yClamped, 0);
+            transform.position = new Vector3(xClamped, yClamped, -1f);
         }
         
         private void RegisterBackgroundBounds()
