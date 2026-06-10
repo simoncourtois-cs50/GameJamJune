@@ -2518,6 +2518,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5825853576332528878, guid: 855738e3cca558845919933027ca0306, type: 3}
+      propertyPath: _maxMadness
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825853576332528878, guid: 855738e3cca558845919933027ca0306, type: 3}
+      propertyPath: _madnessPerSecond
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825853576332528878, guid: 855738e3cca558845919933027ca0306, type: 3}
+      propertyPath: _pillRecoveryValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9093231497502702789, guid: 855738e3cca558845919933027ca0306, type: 3}
       propertyPath: _camera
       value: 
@@ -2659,6 +2671,30 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1652578374}
+    - target: {fileID: 5402606262938261546, guid: f5a2a84429e421d48b1f8243fffb99e7, type: 3}
+      propertyPath: _interval2
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402606262938261546, guid: f5a2a84429e421d48b1f8243fffb99e7, type: 3}
+      propertyPath: _amplitude2
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402606262938261546, guid: f5a2a84429e421d48b1f8243fffb99e7, type: 3}
+      propertyPath: _drugLevel1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402606262938261546, guid: f5a2a84429e421d48b1f8243fffb99e7, type: 3}
+      propertyPath: _drugLevel2
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402606262938261546, guid: f5a2a84429e421d48b1f8243fffb99e7, type: 3}
+      propertyPath: _drugLevel3
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402606262938261546, guid: f5a2a84429e421d48b1f8243fffb99e7, type: 3}
+      propertyPath: _drugLevel4
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7562563624404831388, guid: f5a2a84429e421d48b1f8243fffb99e7, type: 3}
       propertyPath: m_Name
       value: MadnessManager
@@ -2719,6 +2755,10 @@ PrefabInstance:
     - target: {fileID: 6288337217643604567, guid: 956a362744be3f94ba655216c0bba93c, type: 3}
       propertyPath: m_Name
       value: TimeManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7683261756231906189, guid: 956a362744be3f94ba655216c0bba93c, type: 3}
+      propertyPath: _timerValue
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2899,6 +2939,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5514523119439895175, guid: 065bba9be4066cc498b339586926b586, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6789470906694082575, guid: 065bba9be4066cc498b339586926b586, type: 3}
       propertyPath: m_Name
       value: LevelManager
@@ -2982,6 +3026,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 483790141038783198, guid: 8b65c8b18315ca8489c30b369ad531d9, type: 3}
+      propertyPath: _lamp
+      value: 
+      objectReference: {fileID: 475019288}
+    - target: {fileID: 483790141038783198, guid: 8b65c8b18315ca8489c30b369ad531d9, type: 3}
       propertyPath: _timer
       value: 
       objectReference: {fileID: 976617851}
@@ -2993,6 +3041,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1652578374}
+    - target: {fileID: 483790141038783198, guid: 8b65c8b18315ca8489c30b369ad531d9, type: 3}
+      propertyPath: _monsterNumber
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 483790141038783198, guid: 8b65c8b18315ca8489c30b369ad531d9, type: 3}
       propertyPath: _victoryScreen
       value: 
