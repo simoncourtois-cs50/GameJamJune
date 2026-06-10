@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4842410531191754042}
   - component: {fileID: 8862929301367604286}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: S_screamer_couloir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 6974205503876219630}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.97805, y: -1.35637, z: 0.63488}
+  m_LocalPosition: {x: 0, y: -0.05, z: 0.63488}
   m_LocalScale: {x: 0.18, y: 0.18, z: 0.18}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 9099591776611124651}
   - component: {fileID: 3131415866785911234}
   - component: {fileID: 8090816336819522728}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: M_Couloir_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2.9461877, y: -1.3154564}
+  m_Offset: {x: 0.10206097, y: -0.013957024}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -169,7 +169,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.1088977, y: 2.1523829}
+  m_Size: {x: 2.3143973, y: 2.426383}
   m_EdgeRadius: 0
 --- !u!114 &8090816336819522728
 MonoBehaviour:

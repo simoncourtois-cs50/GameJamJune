@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2456194594230349832}
   - component: {fileID: 4766857635176512578}
   - component: {fileID: 8374230940727051730}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: M_Chambre_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -10.640104, y: 0.5430678}
+  m_Offset: {x: 0.23426604, y: 0.20056814}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -78,7 +78,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.6895447, y: 3.494089}
+  m_Size: {x: 3.682796, y: 4.1790886}
   m_EdgeRadius: 0
 --- !u!114 &8374230940727051730
 MonoBehaviour:
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3789317556852424424}
   - component: {fileID: 5096000025266839697}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: S_closet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ Transform:
   m_GameObject: {fileID: 8178047011302002668}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.60262, y: 0.30882, z: 0}
+  m_LocalPosition: {x: -0.02, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
