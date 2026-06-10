@@ -100,6 +100,20 @@ namespace Madness.Runtime
             _currentDrugLevel++;
         }
 
+        public void Reset()
+        {
+            _currentDrugLevel = 0;
+            
+            _flickerInterval = 0;
+            _drunkness = 0;
+            _currentCameraInterval = 0;
+            _currentCameraAmplitude = 0;
+            
+            _camera.SetShake(0, 0);
+            _player.SetDrunkness(0);
+            _light.SetFlickerInterval(0);
+            Debug.Log("reset");
+        }
         #endregion
 
 

@@ -23,7 +23,6 @@ namespace Player.Runtime
         private void Awake()
         {
             _drunkIntensity = 0;
-            Cursor.lockState = CursorLockMode.Locked;
             transform.position = Vector3.zero;
             _playerHealth = GetComponent<EntityHealth>();
             RegisterBackgroundBounds();
@@ -79,7 +78,7 @@ namespace Player.Runtime
             float yPos = transform.position.y;
             float xClamped = Mathf.Clamp(xPos, _xMinBound, _xMaxBound);
             float yClamped = Mathf.Clamp(yPos, _yMinBound, _yMaxBound);
-            transform.position = new Vector3(xClamped, yClamped, 0);
+            transform.position = new Vector3(xClamped, yClamped, -1f);
         }
         
         private void RegisterBackgroundBounds()

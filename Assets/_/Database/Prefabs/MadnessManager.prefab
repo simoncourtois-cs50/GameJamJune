@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 792178711314177638}
   - component: {fileID: 5402606262938261546}
+  - component: {fileID: 3401362602726468954}
   m_Layer: 0
   m_Name: MadnessManager
   m_TagString: Untagged
@@ -67,3 +68,16 @@ MonoBehaviour:
   _interval3: 0.08
   _amplitude4: 0.1
   _interval4: 0.1
+--- !u!114 &3401362602726468954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7562563624404831388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98bbc2c1e63e98543830eec78d976795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GUIDReference.Runtime::GuidComponent
+  serializedGuid: 
