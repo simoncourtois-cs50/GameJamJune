@@ -1012,6 +1012,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: navigationbar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4857839594951626709, guid: 3ba35d8756d87be4e984fbd92b9b552e, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857839594951626709, guid: 3ba35d8756d87be4e984fbd92b9b552e, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857839594951626709, guid: 3ba35d8756d87be4e984fbd92b9b552e, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
