@@ -3043,7 +3043,7 @@ PrefabInstance:
       objectReference: {fileID: 1652578374}
     - target: {fileID: 483790141038783198, guid: 8b65c8b18315ca8489c30b369ad531d9, type: 3}
       propertyPath: _monsterNumber
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 483790141038783198, guid: 8b65c8b18315ca8489c30b369ad531d9, type: 3}
       propertyPath: _victoryScreen
