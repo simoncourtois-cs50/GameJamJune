@@ -23,13 +23,16 @@ namespace CameraManager.Runtime
             Camera camera = Camera.main;
             _halfHeight = camera.orthographicSize;
             _halfwidth = camera.aspect * _halfHeight;
+            _isShakeEnable = true;
         }
 
         private void LateUpdate()
         {
             FollowCameraBoxPosition();
-            
-            Shake();
+            if (_isShakeEnable)
+            {
+                Shake();
+            }
         }
 
         private void Update()
@@ -82,6 +85,11 @@ namespace CameraManager.Runtime
             _shakeInterval = interval;
         }
 
+        public void DisableShake()
+        {
+            _isShakeEnable = false;
+        }
+
         #endregion
 
 
@@ -107,7 +115,9 @@ namespace CameraManager.Runtime
         private float _xMinBound;
         private float _yMaxBound;
         private float _yMinBound;
-        
+
+        private bool _isShakeEnable;
+
         #endregion
     }
 }

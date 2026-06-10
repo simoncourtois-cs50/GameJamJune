@@ -47,8 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: GameConductor.Runtime::GameConductor.Runtime.GameManager
   _gameoverScreen: {fileID: 0}
   _victoryScreen: {fileID: 0}
+  _monsterCounter: {fileID: 0}
+  _timer: {fileID: 0}
   _player: {fileID: 0}
   _health: {fileID: 0}
+  _lamp: {fileID: 0}
   _monsterNumber: 5
 --- !u!114 &8698336511711521232
 MonoBehaviour:

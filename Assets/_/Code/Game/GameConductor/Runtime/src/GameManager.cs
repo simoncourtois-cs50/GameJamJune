@@ -1,4 +1,5 @@
 
+using CameraManager.Runtime;
 using Player.Runtime;
 using Timer.Runtime;
 using TMPro;
@@ -63,6 +64,15 @@ namespace GameConductor.Runtime
             _gameoverScreen.SetActive(false);
             _currentMonsterNumber = _monsterNumber;
             UpdateCounter();
+
+            if (_isLargeVisibilityEnabled)
+            {
+                SetBigLightRadius();
+            }
+            else
+            {
+                SetNormalLightRadius();
+            }
         }
 
         private void UpdateCounter()
@@ -78,7 +88,18 @@ namespace GameConductor.Runtime
             string formatedTimer = $"{minute:D2}:{second:D2}";
             _timer.text = formatedTimer;
         }
+        public void SetBigLightRadius()
+        {
+            _isLargeVisibilityEnabled = true;
+            _lamp.SetRadiusBig();
+            Debug.Log("[ACCESSIBILITÉ] Rayon LARGE activé !");
+        }
 
+        public void SetNormalLightRadius()
+        {
+            _isLargeVisibilityEnabled = false;
+            _lamp.SetRadiusNormal();
+        }
         #endregion
 
         #region Private and Protected
@@ -89,11 +110,14 @@ namespace GameConductor.Runtime
         [SerializeField] private TMP_Text _monsterCounter;
         [SerializeField] private TMP_Text _timer;
         [SerializeField] private ManageTarget _player;
-        [SerializeField] private EntityHealth _health;    
+        [SerializeField] private EntityHealth _health;
+        [SerializeField] private Flicker _lamp;
+        [SerializeField] private Follow _camera;
         [Header("Game Variables")]
         [SerializeField] private int _monsterNumber;
 
         private int _currentMonsterNumber;
+        private bool _isLargeVisibilityEnabled = false;
         #endregion
     }
 }
