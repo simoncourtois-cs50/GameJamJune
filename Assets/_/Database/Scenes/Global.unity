@@ -2064,7 +2064,7 @@ PrefabInstance:
       objectReference: {fileID: 1967009922}
     - target: {fileID: 9093231497502702789, guid: 855738e3cca558845919933027ca0306, type: 3}
       propertyPath: _mouseSensitivity
-      value: 3
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 9093231497502702789, guid: 855738e3cca558845919933027ca0306, type: 3}
       propertyPath: _backgroundCollider
