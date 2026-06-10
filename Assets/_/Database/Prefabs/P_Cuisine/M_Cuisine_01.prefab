@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7032322167107945371}
   - component: {fileID: 4309870081477557223}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: S_entite_cuisine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1875095918307535700}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2373798, y: -0.58118, z: 10.12233}
+  m_LocalPosition: {x: 0.05, y: 0.07, z: 10.12233}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 1987713839762722603}
   - component: {fileID: 5927696986127223056}
   - component: {fileID: 2296157459926468044}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: M_Cuisine_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 3.2333245, y: -0.5474415}
+  m_Offset: {x: 0.2535758, y: 0.0690583}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -182,5 +182,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.8133993, y: 6.645487}
+  m_Size: {x: 3.5668993, y: 7.193486}
   m_EdgeRadius: 0

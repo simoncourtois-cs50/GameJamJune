@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5261265988697179243}
   - component: {fileID: 6747413674541546855}
   - component: {fileID: 59071867983122784}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: M_Grenier_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6436532504841925421}
   - component: {fileID: 4539246470475001354}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: S_entite-grenier
   m_TagString: Untagged
   m_Icon: {fileID: 0}

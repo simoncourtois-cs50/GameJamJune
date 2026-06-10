@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3384669412969864562}
   - component: {fileID: 1187568003092612875}
   - component: {fileID: 7130204650053438267}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: M_Grenier_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.16318384, y: -0.19568765}
+  m_Offset: {x: 0.12360719, y: -0.004493952}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -91,7 +91,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.1091175, y: 1.9132092}
+  m_Size: {x: 2.0135202, y: 2.2955966}
   m_EdgeRadius: 0
 --- !u!1 &5099096617074670167
 GameObject:
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1636668458577380212}
   - component: {fileID: 8288283871503649137}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: S_BehindWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ Transform:
   m_GameObject: {fileID: 5099096617074670167}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.398, y: -0.21999991, z: -7.6103687}
+  m_LocalPosition: {x: 0.03, y: 0.02, z: -7.6103687}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
