@@ -8,7 +8,7 @@ public class Flicker : MonoBehaviour
     private void Update()
     {
         DefectEffect();
-
+        
         if (_isFlickering && _flickerInterval > 0)
         {
             FlickerIntensity();
@@ -44,6 +44,15 @@ public class Flicker : MonoBehaviour
         _flickerInterval = interval;
     }
 
+    public void SetRadiusNormal()
+    {
+        _torch.pointLightOuterRadius = 6f;
+    }
+    public void SetRadiusBig()
+    {
+        _torch.pointLightOuterRadius = 12f;
+    }
+
     #endregion
 
 
@@ -57,5 +66,6 @@ public class Flicker : MonoBehaviour
     private float _animationLength = 1f;
     [SerializeField] private float _flickerInterval;
     private float _currentIntervalTimer;
+    
     #endregion
 }

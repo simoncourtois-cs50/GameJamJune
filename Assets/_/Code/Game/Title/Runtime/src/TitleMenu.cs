@@ -10,9 +10,11 @@ namespace Title.Runtime
 {
     public class TitleMenu : MonoBehaviour
     {
+         
+
         #region Unity API
 
-        private void Awake()
+        private void Start()
         {
             _gameManager = _gameManagerRef.gameObject.GetComponent<GameManager>();
             _madnessManager = _madnessManagerReference.gameObject.GetComponent<MadnessManager>();
@@ -45,6 +47,29 @@ namespace Title.Runtime
         public void LoadTitleMenu()
         {
             LevelManager.Load(_titleMenu);
+            DisableSettings();
+        }
+        public void EnableSettings()
+        {
+            _mainMenu.SetActive(false);
+            _settingsMenu.SetActive(true);
+        }
+
+        public void DisableSettings()
+        {
+            _mainMenu.SetActive(true);
+            _settingsMenu.SetActive(false);
+        }
+        public void ManageVisibility(bool isExtendedVisibilityEnabled)
+        {
+            if (isExtendedVisibilityEnabled)
+            {
+                _gameManager.SetBigLightRadius();
+            }
+            else
+            {
+                _gameManager.SetNormalLightRadius();
+            }
         }
 
 #endregion
@@ -57,8 +82,12 @@ namespace Title.Runtime
         [SerializeField] private LevelData _titleMenu;
         [SerializeField] private GuidReference _gameManagerRef;
         [SerializeField] private GuidReference _madnessManagerReference;
+        [SerializeField] private GameObject _mainMenu;
+        [SerializeField] private GameObject _settingsMenu;
+
         private GameManager _gameManager;
         private MadnessManager _madnessManager;
+        
         #endregion
     }
 }
