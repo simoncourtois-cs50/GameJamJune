@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1016916407544003686}
   - component: {fileID: 1279590779376966055}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: S_entite_dent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 7235064103052853821}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.33195, y: -2.23637, z: -7.6103687}
+  m_LocalPosition: {x: -0.06, y: -0.03, z: -7.6103687}
   m_LocalScale: {x: -2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 3182453696633578734}
   - component: {fileID: 3416010232498101841}
   - component: {fileID: 6283823145379303303}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: M_Salon_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 9.03425, y: -2.1851792}
+  m_Offset: {x: 0.11391258, y: -0.034573317}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -182,5 +182,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.935318, y: 7.805585}
+  m_Size: {x: 5.5435963, y: 8.3666115}
   m_EdgeRadius: 0
