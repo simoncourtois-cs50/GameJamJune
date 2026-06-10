@@ -38,6 +38,7 @@ namespace Room.Runtime
             while (_currentRoomIndex == _previousRoomIndex);
 
             _roomDataList[_currentRoomIndex].m_isActive = true;
+            Debug.Log(_roomDataList[_currentRoomIndex].m_name);
             _previousRoomIndex = _currentRoomIndex;
         }
 
