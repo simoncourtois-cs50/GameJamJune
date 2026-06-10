@@ -2,7 +2,9 @@
     "name": "GameConductor.Runtime",
     "rootNamespace": "GameConductor.Runtime",
     "references": [
-        "GUID:c959baa87c12e654db2b72f7955f355c"
+        "GUID:c959baa87c12e654db2b72f7955f355c",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:7df23d85892190940bb20bd37c5950bf"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -7,6 +7,13 @@ namespace Levels.Runtime
 {
     public class LevelManager : MonoBehaviour
     {
+        #region Public
+
+        public static bool IsRestarting = false;
+
+        #endregion
+        
+        
         #region Unity API
 
         private async void Awake()

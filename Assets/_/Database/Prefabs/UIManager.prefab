@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4354850641829721415}
   - component: {fileID: 314307973998934042}
+  - component: {fileID: 4894222371429100835}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -46,3 +47,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: UI.Runtime::UI.Runtime.SanityBar
   _sanityBar: {fileID: 0}
   _playerSanity: {fileID: 0}
+--- !u!114 &4894222371429100835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3223335341126186568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a388d3c3ace78d408774dab6e8216f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Title.Runtime::Title.Runtime.RestartMenu
+  _titleMenu: {fileID: 11400000, guid: bfa802ba3f38256418e646b5aeba3a8d, type: 2}

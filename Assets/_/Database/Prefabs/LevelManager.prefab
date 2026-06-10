@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 2517319285249777334}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7992276, y: 0.22326165, z: 0}
-  m_LocalScale: {x: 1.1238899, y: 1.1238899, z: 1.1238899}
+  m_LocalPosition: {x: -0.0162, y: 0.0587, z: 0}
+  m_LocalScale: {x: 1.4614259, y: 1.4116641, z: 1.1238899}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3658980378854931502}
@@ -184,4 +184,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Levels.Runtime::Levels.Runtime.LevelManager
   _startMenu: {fileID: 11400000, guid: bfa802ba3f38256418e646b5aeba3a8d, type: 2}
-  _manualChooseLevel: 1
+  _manualChooseLevel: 0
