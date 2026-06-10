@@ -2520,7 +2520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5825853576332528878, guid: 855738e3cca558845919933027ca0306, type: 3}
       propertyPath: _maxMadness
-      value: 70
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5825853576332528878, guid: 855738e3cca558845919933027ca0306, type: 3}
       propertyPath: _madnessPerSecond
